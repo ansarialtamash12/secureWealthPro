@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All Plotting Projects – Secure Wealth Pro</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="wrap">
+  <div class="crumbs">Home / <b>Plot Projects</b></div>
+  <div class="phero">
+    <div><span class="eyebrow light">Plotting inventory</span><h1>All Plotting Projects</h1><p>Residential and commercial plots across Vrindavan Mathura, Dholera, Tuple and Green Valley — with transparent pricing.</p></div>
+    <a class="btn btn-green" href="https://wa.me/919000011111"><i class="fa-brands fa-whatsapp"></i>WhatsApp Enquiry</a>
+    <svg viewBox="0 0 400 160"><g fill="#fff"><rect x="10" y="70" width="36" height="90"/><rect x="54" y="30" width="44" height="130"/><rect x="106" y="80" width="32" height="80"/><rect x="146" y="50" width="40" height="110"/><rect x="200" y="100" width="40" height="60"/><path d="M250 160 L290 60 L330 160Z"/><rect x="340" y="90" width="50" height="70"/></g></svg>
+  </div>
+
+  <div class="pl">
+    <aside class="side">
+      <h3><i class="fa-solid fa-filter"></i>&nbsp; Browse Inventory</h3>
+      <div class="grp"><small>Property type</small>
+        <label><span><input type="radio" name="type" value="all" checked> All Plots</span><span class="cnt" id="c-all"></span></label>
+        <label><span><input type="radio" name="type" value="residential"> Residential</span><span class="cnt" id="c-residential"></span></label>
+        <label><span><input type="radio" name="type" value="commercial"> Commercial</span><span class="cnt" id="c-commercial"></span></label></div>
+      <div class="grp"><small>Township</small><div id="townFilters"></div></div>
+      <div class="grp" style="border:0"><small>Availability</small>
+        <label><span><input type="checkbox" id="onlyAvail"> Available only</span></label></div>
+    </aside>
+
+    <section>
+      <div class="eyebrow">Plot inventory</div>
+      <h2 style="margin:4px 0 14px;font-size:1.9rem">Available plots <span id="total" style="font-size:1rem;color:var(--muted);font-family:Inter;font-weight:700"></span></h2>
+      <div class="tools">
+        <div class="seg" id="seg"><button data-v="all" class="on">All</button><button data-v="residential">Residential</button><button data-v="commercial">Commercial</button></div>
+        <input id="q" placeholder="Search by size, township or plot type…">
+        <select id="sort"><option value="">Sort: Featured</option><option value="pa">Price: Low to High</option><option value="pd">Price: High to Low</option><option value="sa">Size: Small to Large</option><option value="sd">Size: Large to Small</option></select>
+      </div>
+      <div class="pgrid" id="grid"></div>
+    </section>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="mbox" id="mbox"></div></div>
+
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>
+mountChrome('projects');
+const state = {type:'all', towns:new Set(), q:'', sort:'', avail:false};
+const params = new URLSearchParams(location.search);
+if(['residential','commercial'].includes(params.get('type'))) state.type = params.get('type');
+if(params.get('town')) state.towns.add(params.get('town'));
+
+/* counts + township filters */
+document.getElementById('c-all').textContent = PLOTS.length;
+['residential','commercial'].forEach(t=>document.getElementById('c-'+t).textContent = PLOTS.filter(p=>p.type===t).length);
+document.getElementById('townFilters').innerHTML = TOWNS.map(t=>`<label><span><input type="checkbox" value="${t.name}" ${state.towns.has(t.name)?'checked':''}> ${t.name}</span><span class="cnt">${PLOTS.filter(p=>p.town===t.name).length}</span></label>`).join('');
+
+function syncType(){
+  document.querySelectorAll('input[name=type]').forEach(r=>r.checked = r.value===state.type);
+  document.querySelectorAll('#seg button').forEach(b=>b.classList.toggle('on', b.dataset.v===state.type));
+}
+function render(){
+  let list = PLOTS.filter(p =>
+    (state.type==='all' || p.type===state.type) &&
+    (!state.towns.size || state.towns.has(p.town)) &&
+    (!state.avail || p.status!=='sold') &&
+    (!state.q || (p.title+' '+p.town+' '+p.cat+' '+p.size).toLowerCase().includes(state.q)));
+  const s = {pa:(a,b)=>a.price-b.price, pd:(a,b)=>b.price-a.price, sa:(a,b)=>a.size-b.size, sd:(a,b)=>b.size-a.size}[state.sort];
+  if(s) list.sort(s);
+  document.getElementById('total').textContent = '· ' + list.length + ' listing' + (list.length===1?'':'s');
+  document.getElementById('grid').innerHTML = list.length ? list.map((p,i)=>{
+    const mood = ['dawn','day','dusk','green'][p.id%4], rate = Math.round(p.price/p.size);
+    const st = {available:'Available',limited:'Limited',sold:'Booked'}[p.status];
+    return `<article class="pc" style="animation-delay:${i*50}ms">
+      <div class="art"><span class="badge ty ${p.type}">${p.type}</span><span class="badge st ${p.status}">${st}</span>${art(p.type,mood,p.id+2,'p'+p.id)}</div>
+      <div class="body"><div class="tag">${p.town} · ${p.cat}</div><h3>${p.title}</h3>
+        <div class="loc"><i class="fa-solid fa-location-dot"></i>${p.town} · ${p.facing} facing</div>
+        <div class="pr"><div><small>PRICE</small><b>${inr(p.price)}</b></div><span>${inr(rate)} / sq. yd.</span></div>
+        <div class="act"><a href="#" data-id="${p.id}">View Full Details <i class="fa-solid fa-arrow-right"></i></a><a href="${WA}?text=${encodeURIComponent('Hi, I am interested in: '+p.title+' ('+p.town+')')}" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div></article>`;
+  }).join('') : `<div class="empty"><i class="fa-solid fa-magnifying-glass" style="font-size:2rem;margin-bottom:10px"></i><p>No plots match these filters. Try clearing a filter.</p></div>`;
+}
+document.querySelectorAll('input[name=type]').forEach(r=>r.onchange=()=>{state.type=r.value;syncType();render()});
+document.getElementById('seg').onclick=e=>{const b=e.target.closest('button'); if(!b)return; state.type=b.dataset.v; syncType(); render()};
+document.getElementById('townFilters').onchange=e=>{e.target.checked?state.towns.add(e.target.value):state.towns.delete(e.target.value);render()};
+document.getElementById('onlyAvail').onchange=e=>{state.avail=e.target.checked;render()};
+document.getElementById('q').oninput=e=>{state.q=e.target.value.trim().toLowerCase();render()};
+document.getElementById('sort').onchange=e=>{state.sort=e.target.value;render()};
+syncType(); render();
+
+/* plot detail popup */
+const IDEAL={residential:'A home plot in a marked, planned layout.','Shop Plots':'A ground-floor retail shop with direct road frontage.','Showroom Plots':'A showroom that needs a wide front.','Office Plots':'An office block or multi-floor commercial building.','Commercial Corners':'A corner building visible from two roads.'};
+const modal=document.getElementById('modal'), mbox=document.getElementById('mbox');
+document.getElementById('grid').addEventListener('click',e=>{const a=e.target.closest('a[data-id]'); if(!a) return; e.preventDefault(); openPlot(+a.dataset.id)});
+function openPlot(id){
+  const p=PLOTS.find(x=>x.id===id), lbl={available:'Available',limited:'Limited availability',sold:'Booked'}[p.status], mood=['dawn','day','dusk','green'][p.id%4];
+  mbox.innerHTML=`<button class="mclose" aria-label="Close">${ico('close',18)}</button><div class="mart"><span class="badge ty ${p.type}" style="z-index:2">${p.type}</span>${art(p.type,mood,p.id+2,'m'+p.id)}</div>
+  <div class="mbody"><span class="eyebrow">${p.town} · ${p.cat}</span><h3 id="mTitle">${p.title}</h3><div class="big">${inr(p.price)}</div><div style="color:var(--muted);font-weight:700;font-size:.85rem">${inr(Math.round(p.price/p.size))} per sq. yd.</div>
+  <dl><div><dt>Size</dt><dd>${p.size} sq. yd.</dd></div><div><dt>Facing</dt><dd>${p.facing}</dd></div><div><dt>Status</dt><dd>${lbl}</dd></div><div><dt>Type</dt><dd style="text-transform:capitalize">${p.type}</dd></div></dl>
+  <div class="ideal"><b>Suited for:</b> ${IDEAL[p.type==='residential'?'residential':p.cat]}</div>
+  <div class="mact"><a class="btn btn-wa" href="${WA}?text=${encodeURIComponent('Hi, I am interested in: '+p.title+' ('+p.town+')')}">${ico('wa',18)} Enquire on WhatsApp</a><a class="btn btn-green" href="register.html">Register to Book</a></div>
+  <p style="font-size:.72rem;color:var(--muted);margin-top:12px">Sample listing data. Availability is confirmed on site.</p></div>`;
+  modal.classList.add('open'); mbox.querySelector('.mclose').focus();
+}
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.mclose')) modal.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') modal.classList.remove('open')});
+</script>
+</body>
+</html>

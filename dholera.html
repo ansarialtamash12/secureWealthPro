@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dholera Plots – Secure Wealth Pro</title>
+<meta name="description" content="Residential and commercial plots in Dholera with published size, facing and price.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main id="app"></main>
+<div id="site-footer"></div>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/township.js"></script>
+<script>
+renderTownship({
+  key:'dholera', cls:'dh', name:'Dholera', mood:'day', seed:23,
+  eyebrow:'Dholera plotting',
+  h1:'Plots in <em>Dholera</em>, with the numbers up front.',
+  lead:'Township plots and commercial corners laid out on a planned grid. Compare size, facing and price across every listing, then visit the site with our team.',
+  about:{title:'Planned plotting in Dholera.',text:'Residential township plots and larger commercial plots are listed side by side, each with its own price and rate per square yard.'},
+  highlights:[
+    {i:'corner',t:'Planned road grid',d:'Plots sit on marked internal roads. Check the layout plan on your visit.'},
+    {i:'building',t:'Residential and commercial',d:'Home plots, a commercial corner and an office block plot are listed here.'},
+    {i:'badge',t:'Clear pricing',d:'Every plot shows total value and rate per square yard before you enquire.'}
+  ],
+  extraChecks:['Ask which road and block of the layout plan the plot falls in.'],
+  faq:[
+    ['Can I visit before I book?','Yes. Our site visit desk shows you the plot and its boundaries. Papers and availability are checked on site.'],
+    ['Which plot sizes are listed here?','Residential plots of 150 and 200 sq. yd. and commercial plots from 60 to 300 sq. yd. at the moment.'],
+    ['How do I enquire about a plot?','Use the WhatsApp button on any plot card, or register as a member to follow your enquiry.']
+  ]
+});
+</script>
+</body>
+</html>

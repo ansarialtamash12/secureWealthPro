@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invest in UAE – Secure Wealth Pro</title>
+<meta name="description" content="Invest in property across all seven UAE emirates and pay in crypto, AED or INR.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="chero uhero">
+  <div class="wrap">
+    <div style="padding-bottom:50px">
+      <div class="crumbs">Home / <b>Invest in UAE</b></div>
+      <span class="pill"><span class="dot"></span>International investment</span>
+      <h1>Invest in the <em>UAE</em> with any currency.</h1>
+      <p class="lead">Pay in crypto, AED or INR. Choose from all seven emirates, from the capital Abu Dhabi to the east coast of Fujairah.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="#emirates"><i class="fa-solid fa-location-dot"></i>Choose an Emirate</a>
+        <a class="btn btn-ghost" href="#convert"><i class="fa-solid fa-arrow-right-arrow-left"></i>Convert Your Budget</a>
+      </div>
+      <div class="trust" style="display:flex;gap:10px;flex-wrap:wrap">
+        <span class="uchip">₿ Crypto</span><span class="uchip">AED</span><span class="uchip">₹ INR</span>
+      </div>
+    </div>
+    <div class="hero-art" id="uaeHero"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="cstats"><div class="wrap"><div class="grid rv">
+  <div class="stat"><b data-to="7">0</b><p>Emirates to choose from</p></div>
+  <div class="stat"><b data-to="3">0</b><p>Ways to pay</p></div>
+  <div class="stat"><b>AED</b><p>Pegged to the US dollar</p></div>
+  <div class="stat"><b data-to="1">0</b><p>Place to ask everything</p></div>
+</div></div></section>
+
+<!-- PAYMENT OPTIONS -->
+<section class="sec" id="pay" style="padding-bottom:30px"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Pay your way</span><h2>Three ways to pay.</h2><p>Use the currency you already hold. Ask the team which option suits the property you choose.</p></div>
+  <div class="paygrid">
+    <article class="paycard rv"><div class="coin"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#e0a526"/><circle cx="32" cy="32" r="24" fill="none" stroke="#fff3c8" stroke-width="2"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="30" fill="#2a1700">₿</text></svg></div>
+      <h3>Crypto</h3><p>Major coins and stablecoins. The list of accepted coins and the wallet details are confirmed at booking.</p></article>
+    <article class="paycard rv"><div class="coin"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0e9361"/><circle cx="32" cy="32" r="24" fill="none" stroke="#c9f7e2" stroke-width="2"/><text x="32" y="38" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="17" fill="#fff">AED</text></svg></div>
+      <h3>UAE dirham (AED)</h3><p>The local currency, pegged to the US dollar at 3.6725 AED per USD. Pay by bank transfer.</p></article>
+    <article class="paycard rv"><div class="coin"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#2a1b0f"/><circle cx="32" cy="32" r="24" fill="none" stroke="#e0a526" stroke-width="2"/><text x="32" y="43" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="28" fill="#ffd36b">₹</text></svg></div>
+      <h3>Indian rupee (INR)</h3><p>Pay in rupees and we show the AED amount. Residents of India should check RBI and FEMA rules before sending money abroad.</p></article>
+  </div>
+</div></section>
+
+<!-- CONVERTER -->
+<section class="sec mapsec" id="convert"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Budget converter</span><h2>See your budget in all three currencies.</h2><p>Enter an amount and today's rates. The rates below are sample values that you can change. Always confirm the rate applied at the time of payment.</p></div>
+  <div class="conv rv">
+    <div class="convin">
+      <label for="amt">Your budget</label>
+      <div class="amtrow"><input id="amt" type="number" inputmode="decimal" min="0" step="any" value="1000000"><div class="seg" id="curSeg" role="group" aria-label="Currency"><button data-c="AED" class="on">AED</button><button data-c="INR">INR</button><button data-c="USDT">Crypto (USDT)</button></div></div>
+      <div class="rates">
+        <label for="rUsdt">1 USDT = <input id="rUsdt" type="number" step="any" min="0" value="3.6725"> AED</label>
+        <label for="rInr">1 AED = <input id="rInr" type="number" step="any" min="0" value="23"> INR</label>
+      </div>
+      <p class="fine">Sample rates. USDT is treated as 1 USD. Enter current market rates for a real estimate.</p>
+    </div>
+    <div class="convout" id="convOut" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<!-- EMIRATES -->
+<section class="sec" id="emirates"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">The seven emirates</span><h2>Pick an emirate to start.</h2><p>Each emirate has its own character and its own property rules. Choose how you plan to pay, then enquire about the emirate that interests you.</p></div>
+  <div class="paysel rv"><span>I plan to pay in</span>
+    <div class="seg" id="paySeg" role="group" aria-label="Payment currency"><button data-p="Crypto">Crypto</button><button data-p="AED" class="on">AED</button><button data-p="INR">INR</button></div></div>
+  <div class="emgrid" id="emGrid"></div>
+  <p class="fine" style="margin-top:18px">Foreign ownership rules differ by emirate and by zone. We confirm that a property is open to you before you book.</p>
+</div></section>
+
+<!-- STEPS -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head center rv" style="text-align:center"><span class="eyebrow">How it works</span><h2>From enquiry to ownership</h2></div>
+  <div class="steps">
+    <div class="step rv"><div class="num"><i class="fa-solid fa-location-dot"></i></div><h3>1. Choose</h3><p>Pick an emirate and a property type.</p></div>
+    <div class="step rv"><div class="num"><i class="fa-solid fa-coins"></i></div><h3>2. Select currency</h3><p>Crypto, AED or INR.</p></div>
+    <div class="step rv"><div class="num"><i class="fa-solid fa-user-shield"></i></div><h3>3. Verify</h3><p>Complete KYC and share your documents.</p></div>
+    <div class="step rv"><div class="num"><i class="fa-solid fa-file-signature"></i></div><h3>4. Reserve and register</h3><p>Reserve the property, then register it with the emirate.</p></div>
+  </div>
+  <p class="fine" style="text-align:center;margin-top:18px">Steps and timelines vary by developer and emirate.</p>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head center rv" style="text-align:center"><span class="eyebrow">Questions</span><h2>Good to know before you invest</h2></div>
+  <div class="faq" id="faq">
+    <div class="q rv"><button>Can I buy property in the UAE as a foreigner?<i class="fa-solid fa-plus"></i></button><div class="a">In many cases, yes. Foreign ownership is allowed in designated areas, and the rules differ by emirate and zone. We confirm this for the specific property before you book.</div></div>
+    <div class="q rv"><button>Which currencies can I pay in?<i class="fa-solid fa-plus"></i></button><div class="a">Crypto, AED and INR. Accepted coins and the exact payment steps are confirmed at booking.</div></div>
+    <div class="q rv"><button>Are exchange rates fixed?<i class="fa-solid fa-plus"></i></button><div class="a">No. Rates change. The converter gives a rough idea. Ask the team for the rate that applies on the day you pay.</div></div>
+    <div class="q rv"><button>I live in India. Are there rules for sending money abroad?<i class="fa-solid fa-plus"></i></button><div class="a">Yes. Check RBI and FEMA rules and any reporting or tax requirements before you remit funds. A tax adviser can guide you.</div></div>
+    <div class="q rv"><button>Where is the property registered?<i class="fa-solid fa-plus"></i></button><div class="a">Each emirate keeps its own property registry. Registration happens with the emirate where the property sits.</div></div>
+  </div>
+  <p class="fine" style="text-align:center;margin-top:18px;max-width:720px;margin-inline:auto">This page is general information, not legal, tax or investment advice. Property values can go down as well as up.</p>
+</div></section>
+
+<div id="site-footer"></div>
+
+<script src="js/app.js"></script>
+<script>
+mountChrome('uae'); counters();
+
+/* ---------- artwork ---------- */
+function uaeArt(kind, uid, hero){
+  const W=hero?600:500, H=hero?420:300, sea=hero?H*.74:H*.72;
+  let h=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" ${hero?'role="img" aria-label="UAE skyline at sunset"':'aria-hidden="true"'}>
+  <defs><linearGradient id="us${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0f07"/><stop offset=".5" stop-color="#9a5a22"/><stop offset="1" stop-color="#f6c864"/></linearGradient>
+  <linearGradient id="ue${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e6b4c"/><stop offset="1" stop-color="#062a20"/></linearGradient>
+  <radialGradient id="uo${uid}"><stop offset="0" stop-color="#fff2b8"/><stop offset="1" stop-color="#ffd36b" stop-opacity="0"/></radialGradient></defs>
+  <rect width="${W}" height="${H}" fill="url(#us${uid})"/>
+  <circle cx="${W*.72}" cy="${sea-30}" r="${hero?110:80}" fill="url(#uo${uid})"/><circle cx="${W*.72}" cy="${sea-30}" r="${hero?30:22}" fill="#fff4c4"/>`;
+  const dark='#150b05', lit='#ffe08a', cream='#f6e7c4';
+  const win=(x,y,w,hh,step=14)=>{let s='';for(let yy=y+8;yy<y+hh-6;yy+=step)for(let xx=x+6;xx<x+w-8;xx+=11)s+=`<rect x="${xx}" y="${yy}" width="5" height="7" fill="${(xx*7+yy*3)%5?lit:'#5a3a1a'}" opacity=".9"/>`;return s};
+  const k=kind, s=sea, u=W/500;
+  if(k==='dubai'||k==='hero'){
+    const cx=hero?W*.36:W*.5;
+    h+=`<g fill="${dark}"><rect x="${cx-5}" y="${s-(hero?285:200)}" width="10" height="${hero?285:200}"/><path d="M${cx-22} ${s} L${cx-5} ${s-(hero?225:150)} L${cx+5} ${s-(hero?225:150)} L${cx+22} ${s}Z"/><path d="M${cx-40} ${s} L${cx-14} ${s-(hero?150:90)} L${cx+14} ${s-(hero?150:90)} L${cx+40} ${s}Z"/>
+    <rect x="${cx-120}" y="${s-(hero?150:90)}" width="44" height="${hero?150:90}"/><rect x="${cx-70}" y="${s-(hero?200:120)}" width="38" height="${hero?200:120}"/><rect x="${cx+54}" y="${s-(hero?170:100)}" width="42" height="${hero?170:100}"/><rect x="${cx+104}" y="${s-(hero?120:70)}" width="40" height="${hero?120:70}"/></g>`;
+    h+=win(cx-120,s-(hero?150:90),44,hero?150:90)+win(cx-70,s-(hero?200:120),38,hero?200:120)+win(cx+54,s-(hero?170:100),42,hero?170:100)+win(cx+104,s-(hero?120:70),40,hero?120:70);
+  }
+  if(k==='hero'){ // mosque dome + minarets on the right, dhow
+    const mx=W*.74;
+    h+=`<g fill="${dark}"><rect x="${mx-70}" y="${s-60}" width="140" height="60"/><path d="M${mx-48} ${s-60} Q${mx} ${s-150} ${mx+48} ${s-60}Z"/><rect x="${mx-3}" y="${s-168}" width="6" height="22"/><rect x="${mx-84}" y="${s-130}" width="12" height="130"/><path d="M${mx-90} ${s-130} L${mx-78} ${s-158} L${mx-66} ${s-130}Z"/><rect x="${mx+72}" y="${s-130}" width="12" height="130"/><path d="M${mx+66} ${s-130} L${mx+78} ${s-158} L${mx+90} ${s-130}Z"/></g>
+    <g transform="translate(${W*.52} ${s+34})"><path d="M0 0 H92 L78 16 H14Z" fill="#f6e7c4"/><path d="M46 0 V-48 L84 -4Z" fill="#ffd36b"/><path d="M42 0 V-40 L12 -4Z" fill="#e0a526"/></g>`;
+  }
+  if(k==='abudhabi'){
+    h+=`<g fill="${cream}"><rect x="${W*.30}" y="${s-70}" width="${W*.40}" height="70"/><path d="M${W*.38} ${s-70} Q${W*.5} ${s-190} ${W*.62} ${s-70}Z"/><rect x="${W*.5-3}" y="${s-206}" width="6" height="26"/>
+    <path d="M${W*.30} ${s-70} Q${W*.34} ${s-120} ${W*.38} ${s-70}Z"/><path d="M${W*.62} ${s-70} Q${W*.66} ${s-120} ${W*.70} ${s-70}Z"/>
+    <rect x="${W*.16}" y="${s-150}" width="10" height="150"/><path d="M${W*.16-4} ${s-150} L${W*.16+5} ${s-176} L${W*.16+14} ${s-150}Z"/><rect x="${W*.80}" y="${s-150}" width="10" height="150"/><path d="M${W*.80-4} ${s-150} L${W*.80+5} ${s-176} L${W*.80+14} ${s-150}Z"/></g>
+    <g fill="#8a5a22" opacity=".7">${[0,1,2,3,4].map(i=>`<path d="M${W*.34+i*W*.07} ${s} v-30 q${W*.01} -14 ${W*.02} 0 v30Z"/>`).join('')}</g>`;
+  }
+  if(k==='dubai'&&!hero){/* done above */}
+  if(k==='sharjah'){
+    h+=`<g fill="${cream}"><rect x="${W*.28}" y="${s-60}" width="${W*.44}" height="60"/><path d="M${W*.40} ${s-60} Q${W*.5} ${s-150} ${W*.60} ${s-60}Z"/><rect x="${W*.5-3}" y="${s-166}" width="6" height="22"/><rect x="${W*.22}" y="${s-130}" width="10" height="130"/><path d="M${W*.22-3} ${s-130} L${W*.22+5} ${s-152} L${W*.22+13} ${s-130}Z"/><rect x="${W*.74}" y="${s-130}" width="10" height="130"/><path d="M${W*.74-3} ${s-130} L${W*.74+5} ${s-152} L${W*.74+13} ${s-130}Z"/></g>
+    <g fill="${dark}"><rect x="${W*.06}" y="${s-70}" width="${W*.1}" height="70"/><rect x="${W*.86}" y="${s-90}" width="${W*.09}" height="90"/></g>${win(W*.06,s-70,W*.1,70)}${win(W*.86,s-90,W*.09,90)}`;
+  }
+  if(k==='ajman'){
+    h+=`<g fill="${dark}"><rect x="${W*.06}" y="${s-60}" width="${W*.12}" height="60"/><rect x="${W*.2}" y="${s-90}" width="${W*.1}" height="90"/><rect x="${W*.8}" y="${s-70}" width="${W*.14}" height="70"/></g>${win(W*.06,s-60,W*.12,60)}${win(W*.2,s-90,W*.1,90)}${win(W*.8,s-70,W*.14,70)}
+    <g transform="translate(${W*.36} ${s-6}) scale(1.5)"><path d="M0 0 H92 L78 16 H14Z" fill="#150b05"/><path d="M46 0 V-62 L88 -4Z" fill="#f6e7c4"/><path d="M42 0 V-50 L8 -4Z" fill="#e0a526"/><rect x="45" y="-66" width="2" height="66" fill="#150b05"/></g>`;
+  }
+  if(k==='uaq'){
+    h+=`<g fill="${dark}"><rect x="${W*.08}" y="${s-44}" width="${W*.1}" height="44"/><rect x="${W*.2}" y="${s-62}" width="${W*.08}" height="62"/><rect x="${W*.72}" y="${s-50}" width="${W*.12}" height="50"/><rect x="${W*.86}" y="${s-36}" width="${W*.08}" height="36"/></g>${win(W*.2,s-62,W*.08,62)}${win(W*.72,s-50,W*.12,50)}
+    <g fill="#0c5a3f">${[0,1,2,3,4,5].map(i=>`<circle cx="${W*.36+i*W*.06}" cy="${s-8}" r="${14+(i%3)*3}"/>`).join('')}</g><g fill="#fff" opacity=".9">${[0,1,2].map(i=>`<path d="M${W*.44+i*28} ${s+40} q6 -20 12 0 q-6 6 -12 0Z"/>`).join('')}</g>`;
+  }
+  if(k==='rak'){
+    h+=`<path d="M0 ${s} L${W*.12} ${s-90} L${W*.22} ${s-50} L${W*.38} ${s-150} L${W*.52} ${s-70} L${W*.66} ${s-120} L${W*.8} ${s-60} L${W} ${s-100} V${s}Z" fill="#2a170b"/><path d="M${W*.38} ${s-150} L${W*.44} ${s-120} L${W*.4} ${s-112} L${W*.34} ${s-122}Z" fill="#d9a441" opacity=".6"/>
+    <path d="M0 ${s} L${W*.18} ${s-50} L${W*.34} ${s-20} L${W*.55} ${s-60} L${W*.78} ${s-24} L${W} ${s-46} V${s}Z" fill="#150b05"/><g fill="${dark}"><rect x="${W*.82}" y="${s-60}" width="14" height="60"/><rect x="${W*.88}" y="${s-84}" width="16" height="84"/></g>${win(W*.88,s-84,16,84,12)}`;
+  }
+  if(k==='fujairah'){
+    h+=`<path d="M0 ${s} L${W*.1} ${s-70} L${W*.26} ${s-30} L${W*.42} ${s-110} L${W*.58} ${s-40} L${W*.74} ${s-90} L${W} ${s-30} V${s}Z" fill="#2a170b"/>
+    <g fill="${dark}"><rect x="${W*.58}" y="${s-90}" width="${W*.22}" height="90"/><rect x="${W*.56}" y="${s-120}" width="${W*.08}" height="120"/><rect x="${W*.76}" y="${s-108}" width="${W*.07}" height="108"/>${[0,1,2,3].map(i=>`<rect x="${W*.58+i*(W*.055)}" y="${s-102}" width="${W*.03}" height="12"/>`).join('')}<rect x="${W*.56}" y="${s-132}" width="${W*.08}" height="12"/><rect x="${W*.76}" y="${s-120}" width="${W*.07}" height="12"/></g>`;
+  }
+  // sea, shimmer, reflections
+  h+=`<rect x="0" y="${s}" width="${W}" height="${H-s}" fill="url(#ue${uid})"/>`;
+  for(let i=0;i<7;i++){const y=s+8+i*((H-s)/7),w=40+((i*53)%90);h+=`<rect x="${W*.72-w/2+(i%2?10:-10)}" y="${y}" width="${w}" height="2.5" rx="1.2" fill="#ffd36b" opacity="${.75-i*.09}"/>`}
+  return h+'</svg>';
+}
+document.getElementById('uaeHero').innerHTML = uaeArt('hero','h',true) + photoImg('uae-hero')
+ + '<div class="float f1"><div class="ic"><i class="fa-solid fa-city"></i></div><div><b>7 Emirates</b><small>Abu Dhabi to Fujairah</small></div></div>'
+ + '<div class="float f2"><div class="ic"><i class="fa-solid fa-coins"></i></div><div><b>Crypto · AED · INR</b><small>Pay your way</small></div></div>'
+ + '<div class="float f3"><div class="ic"><i class="fa-solid fa-user-shield"></i></div><div><b>KYC first</b><small>Verified investors</small></div></div>';
+
+/* ---------- emirates ---------- */
+const EMIRATES = [
+ {id:'abu-dhabi',name:'Abu Dhabi',kind:'abudhabi',tag:'National capital · Largest emirate',text:'The national capital and the largest emirate in the UAE.',chips:['Capital city','Largest emirate','Government hub']},
+ {id:'dubai',name:'Dubai',kind:'dubai',tag:'Second-largest emirate',text:'The second-largest emirate and a major global business hub.',chips:['Global business hub','Second-largest emirate','International city']},
+ {id:'sharjah',name:'Sharjah',kind:'sharjah',tag:'Arts and culture',text:'A Gulf-coast emirate next to Dubai, known for its arts, museums and culture.',chips:['Borders Dubai','Arts and culture','Gulf coast']},
+ {id:'ajman',name:'Ajman',kind:'ajman',tag:'Smallest emirate',text:'The smallest emirate by area, on the Gulf coast next to Sharjah.',chips:['Smallest emirate','Gulf coast','Next to Sharjah']},
+ {id:'umm-al-quwain',name:'Umm Al Quwain',kind:'uaq',tag:'Quiet coast and lagoon',text:'A calm coastal emirate with lagoons and mangroves, and the smallest population.',chips:['Lagoon and mangroves','Least populated','Gulf coast']},
+ {id:'ras-al-khaimah',name:'Ras Al Khaimah',kind:'rak',tag:'Mountains and coast',text:'The northernmost emirate, where the Hajar mountains meet the sea.',chips:['Northernmost','Mountains and coast','Jebel Jais']},
+ {id:'fujairah',name:'Fujairah',kind:'fujairah',tag:'East coast',text:'The emirate on the Gulf of Oman, with mountains and a sea-facing east coast.',chips:['East coast','Gulf of Oman','Mountains and sea']}
+];
+let payWith='AED';
+const emGrid=document.getElementById('emGrid');
+function drawEm(){
+  emGrid.innerHTML = EMIRATES.map((e,i)=>`<article class="emcard rv" id="${e.id}">
+    <div class="emart">${uaeArt(e.kind,'e'+i)}${photoImg('uae-'+e.kind)}<span class="emtag">${e.tag}</span></div>
+    <div class="embody"><h3>${e.name}</h3><p>${e.text}</p>
+      <div class="emchips">${e.chips.map(c=>`<span>${c}</span>`).join('')}</div>
+      <a class="btn btn-green emcta" href="${WA}?text=${encodeURIComponent('Hi, I would like to invest in '+e.name+', UAE and pay in '+payWith+'.')}"><i class="fa-brands fa-whatsapp"></i>Enquire · pay in ${payWith}</a></div></article>`).join('')
+   + `<article class="emcard emhelp rv"><div class="embody"><span class="eyebrow light">Not sure yet?</span><h3>Ask which emirate fits your plan.</h3><p>Tell us your budget and how you want to pay. We will suggest where to look first.</p><a class="btn btn-gold emcta" href="${WA}?text=${encodeURIComponent('Hi, I want to invest in the UAE. Please suggest an emirate. I plan to pay in '+payWith+'.')}"><i class="fa-brands fa-whatsapp"></i>Talk to the team</a></div></article>`;
+  reveal();
+}
+document.getElementById('paySeg').onclick=e=>{const b=e.target.closest('button'); if(!b) return; payWith=b.dataset.p; document.querySelectorAll('#paySeg button').forEach(x=>x.classList.toggle('on',x===b)); drawEm()};
+drawEm();
+if(location.hash){const t=document.getElementById(location.hash.slice(1)); if(t&&t.classList.contains('emcard')){t.classList.add('in'); setTimeout(()=>t.scrollIntoView({block:'center'}),200)}}
+
+/* ---------- converter ---------- */
+const $=id=>document.getElementById(id); let cur='AED';
+const fmt={AED:n=>'AED '+n.toLocaleString('en-US',{maximumFractionDigits:0}),INR:n=>'₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0}),USDT:n=>n.toLocaleString('en-US',{maximumFractionDigits:2})+' USDT'};
+function convert(){
+  const amt=Math.max(0,+$('amt').value||0), uAed=+$('rUsdt').value||0, inrAed=+$('rInr').value||0;
+  if(!uAed||!inrAed){ $('convOut').innerHTML='<p class="fine">Enter both rates to see the conversion.</p>'; return }
+  const aed = cur==='AED'?amt : cur==='INR'?amt/inrAed : amt*uAed;
+  const v={AED:aed,INR:aed*inrAed,USDT:aed/uAed};
+  const lab={AED:'UAE dirham',INR:'Indian rupee',USDT:'Crypto (USDT)'};
+  $('convOut').innerHTML=['AED','INR','USDT'].map(c=>`<div class="ocard ${c===cur?'src':''}"><small>${lab[c]}${c===cur?' · your input':''}</small><b>${fmt[c](v[c])}</b></div>`).join('')+`<p class="fine">Approx. US$ ${(aed/3.6725).toLocaleString('en-US',{maximumFractionDigits:0})} at the AED peg of 3.6725.</p>`;
+}
+['amt','rUsdt','rInr'].forEach(i=>$(i).addEventListener('input',convert));
+$('curSeg').onclick=e=>{const b=e.target.closest('button'); if(!b) return; cur=b.dataset.c; document.querySelectorAll('#curSeg button').forEach(x=>x.classList.toggle('on',x===b)); convert()};
+convert();
+
+document.querySelectorAll('#faq .q button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+reveal();
+</script>
+</body>
+</html>

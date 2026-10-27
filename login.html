@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Member Login – Secure Wealth Pro</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth">
+<div class="auth-bg" id="bg" aria-hidden="true"></div>
+<main class="auth-wrap">
+  <!-- ASP.NET: set action to your login handler and DEMO = false in auth.js -->
+  <form class="login-card" id="loginForm" method="post" action="/Account/Login" novalidate>
+    <div class="top"><a class="brand" href="index.html" data-brand aria-label="Secure Wealth Pro home"></a></div>
+    <h1>Member Login</h1>
+    <p class="sub">Sign in to your account to continue</p>
+    <div class="notice" id="note" hidden></div>
+
+    <div class="field">
+      <label for="username">Username</label>
+      <div class="input"><span class="ico" data-ico="user"></span><input id="username" name="username" type="text" autocomplete="username" placeholder="Member ID, e.g. HW613477" autocapitalize="characters"></div>
+      <div class="hint" id="usernameHint"></div>
+    </div>
+    <div class="field">
+      <label for="password">Password <a href="#">Forgot password?</a></label>
+      <div class="input"><span class="ico" data-ico="lock"></span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Your password"><button class="eye" data-for="password"></button></div>
+      <div class="hint" id="passwordHint"></div>
+    </div>
+    <button class="btn btn-green submit" type="submit">Sign In <span data-ico="arrow" data-size="18"></span></button>
+    <p class="swap">New user? <a href="register.html">Create account</a></p>
+  </form>
+</main>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>initLogin();</script>
+</body>
+</html>

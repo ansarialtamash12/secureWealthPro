@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create Account – Secure Wealth Pro</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth">
+<div class="auth-bg" id="bg" aria-hidden="true"></div>
+<main class="auth-wrap">
+  <div class="reg-card">
+    <section class="promo">
+      <div class="logobox"><a class="brand" href="index.html" data-brand aria-label="Secure Wealth Pro home"></a></div>
+      <span class="tpill"><span data-ico="shield" data-size="14"></span>Trusted plotted-land membership</span>
+      <h2>One account.<br>Every plot opportunity.</h2>
+      <p>Shortlist inventory, book a site visit and follow your plotting enquiry from one member account.</p>
+      <div class="perks">
+        <div class="perk"><span class="pi" data-ico="tag" data-size="22"></span><div><b>Transparent inventory</b><span>Published size, location and price.</span></div></div>
+        <div class="perk"><span class="pi" data-ico="pin" data-size="22"></span><div><b>Guided site visits</b><span>Walk the plot with the visit desk.</span></div></div>
+        <div class="perk"><span class="pi" data-ico="bell" data-size="22"></span><div><b>Booking updates</b><span>Keep enquiry progress in one place.</span></div></div>
+      </div>
+      <div class="pstats"><div><b>4</b><small>Townships</small></div><div><b>100-300</b><small>Sq. yd. plots</small></div><div><b>7 days</b><small>Visit support</small></div></div>
+      <div class="already"><span>Already have an account?</span><a href="login.html">Member Login <span data-ico="arrow" data-size="16"></span></a></div>
+    </section>
+
+    <!-- ASP.NET: set action to your registration handler and DEMO = false in auth.js -->
+    <form class="formside" id="regForm" method="post" action="/Account/Register" novalidate>
+      <h1>Create your account</h1>
+      <p class="lead">Fill every field. Referral ID is checked against the live member list.</p>
+      <div class="notice" id="note" hidden></div>
+
+      <div class="grid2">
+        <div class="field"><label for="referralId">Referral ID <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="users"></span><input id="referralId" name="referralId" type="text" placeholder="e.g. HW613477" autocomplete="off" autocapitalize="characters"></div><div class="hint" id="referralIdHint"></div></div>
+        <div class="field"><label for="referralName">Referral Name <em>*</em></label>
+          <div class="input ro"><span class="ico" data-ico="badge"></span><input id="referralName" name="referralName" type="text" placeholder="Auto-filled after Referral ID" readonly tabindex="-1"></div><div class="hint"></div></div>
+      </div>
+
+      <div class="sect">Personal details</div>
+      <div class="grid2">
+        <div class="field"><label for="firstName">First Name <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="user"></span><input id="firstName" name="firstName" type="text" placeholder="First name" autocomplete="given-name"></div><div class="hint" id="firstNameHint"></div></div>
+        <div class="field"><label for="lastName">Last Name <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="user"></span><input id="lastName" name="lastName" type="text" placeholder="Last name" autocomplete="family-name"></div><div class="hint" id="lastNameHint"></div></div>
+        <div class="field"><label for="phone">Phone <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="phone"></span><input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="10-digit mobile" autocomplete="tel"></div><div class="hint" id="phoneHint"></div></div>
+        <div class="field"><label for="email">Email</label>
+          <div class="input"><span class="ico" data-ico="mail"></span><input id="email" name="email" type="email" placeholder="Email address" autocomplete="email"></div><div class="hint" id="emailHint"></div></div>
+      </div>
+      <div class="field"><label for="pan">PAN Number</label>
+        <div class="input"><span class="ico" data-ico="card"></span><input id="pan" name="pan" type="text" placeholder="ABCDE1234F" autocomplete="off"></div><div class="hint" id="panHint"></div></div>
+
+      <div class="sect">Secure your account</div>
+      <div class="grid2">
+        <div class="field"><label for="password">Password <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="lock"></span><input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password"><button class="eye" data-for="password"></button></div><div class="hint" id="passwordHint"></div></div>
+        <div class="field"><label for="confirm">Confirm Password <em>*</em></label>
+          <div class="input"><span class="ico" data-ico="shield"></span><input id="confirm" name="confirm" type="password" placeholder="Confirm password" autocomplete="new-password"><button class="eye" data-for="confirm"></button></div><div class="hint" id="confirmHint"></div></div>
+      </div>
+
+      <label class="terms"><input type="checkbox" id="terms" name="terms"><span>I accept the terms and conditions of Secure Wealth Pro plotted land membership.</span></label>
+      <div class="hint err" id="termsHint"></div>
+      <button class="btn submit blue" type="submit">Create Account <span data-ico="arrow" data-size="18"></span></button>
+    </form>
+  </div>
+</main>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>initRegister();</script>
+</body>
+</html>
